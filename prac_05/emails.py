@@ -11,13 +11,19 @@ def main():
     email = input("Email: ")
     while email != "":
         username = obtain_name_from_email(email)
-        enquiry = input(f"Is your name {username}? (Y/n) ").lower()
-        if enquiry != "y" and enquiry != "":
-            username = input("Name: ")
-        email_to_name[email] = username
+        name = confirm_name(username)
+        email_to_name[email] = name
         email = input("Email: ")
     for email, username in email_to_name.items():
         print(f"{username} ({email})")
+
+
+def confirm_name(username):
+    """Confirm and ask the user's name"""
+    enquiry = input(f"Is your name {username}? (Y/n) ").lower()
+    if enquiry != "y" and enquiry != "":
+        username = input("Name: ")
+    return username
 
 
 def obtain_name_from_email(email):
