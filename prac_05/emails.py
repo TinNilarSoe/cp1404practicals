@@ -19,7 +19,7 @@ def main():
 
 
 def confirm_name(username):
-    """Confirm and ask the user's name"""
+    """Confirm and get the user's name"""
     enquiry = input(f"Is your name {username}? (Y/n) ").lower()
     if enquiry != "y" and enquiry != "":
         username = input("Name: ")
