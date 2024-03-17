@@ -5,6 +5,8 @@ Actual:   40 minutes
 """
 
 FILENAME = "wimbledon.csv"
+CHAMPION_INDEX = 2
+COUNTRY_INDEX = 1
 
 
 def main():
@@ -38,8 +40,8 @@ def process_data(archives):
     champion_to_count = {}
     countries = set()
     for data in archives:
-        champion_to_count[data[2]] = champion_to_count.get(data[2], 0) + 1
-        countries.add(data[1])
+        champion_to_count[data[CHAMPION_INDEX]] = champion_to_count.get(data[CHAMPION_INDEX], 0) + 1
+        countries.add(data[COUNTRY_INDEX])
     return champion_to_count, sorted(countries)
 
 
