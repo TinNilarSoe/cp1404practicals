@@ -22,5 +22,4 @@ class ProgrammingLanguage:
 
     def is_dynamic(self):
         """Return a boolean for typing"""
-        if self.typing == "Dynamic":
-            return True
+        return self.typing == "Dynamic"

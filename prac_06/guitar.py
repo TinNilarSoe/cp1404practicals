@@ -4,6 +4,8 @@ Estimate: 40 minutes
 Actual:  45  minutes
 """
 
+VINTAGE_YEAR = 50
+
 
 class Guitar:
     """Represent a Guitar object"""
@@ -25,7 +27,4 @@ class Guitar:
 
     def is_vintage(self):
         """Return True if guitar is older than 50"""
-        if self.get_age() < 50:
-            return False
-        else:
-            return True
+        return self.get_age() >= VINTAGE_YEAR
