@@ -28,10 +28,7 @@ def main():
         elif choice == "D":
             if current_taxi:
                 current_taxi.start_fare()
-                trip_distance = float(input("Drive how far? "))
-                while trip_distance < 0:
-                    print("Invalid distance")
-                    trip_distance = float(input("Drive how far? "))
+                trip_distance = validate_distance()
                 current_taxi.drive(trip_distance)
                 fare_amount = current_taxi.get_fare()
                 print(f"Your {current_taxi.name} trip cost you ${fare_amount:.2f}")
@@ -47,6 +44,14 @@ def main():
     print(f"\nTotal trip cost: ${total_amount:.2f}")
     print("Taxis are now:")
     display_taxis(taxis)
+
+
+def validate_distance():
+    trip_distance = float(input("Drive how far? "))
+    while trip_distance < 0:
+        print("Invalid distance")
+        trip_distance = float(input("Drive how far? "))
+    return trip_distance
 
 
 def display_taxis(taxis):
